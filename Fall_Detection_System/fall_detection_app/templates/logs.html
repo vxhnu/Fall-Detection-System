@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Fall Events Log{% endblock %}
+{% block content %}
+<h1>Logged Fall Events</h1>
+<table>
+    <tr><th>Timestamp</th><th>Mode</th><th>Filename</th></tr>
+    {% for ts, mode, fname in events %}
+    <tr>
+        <td>{{ ts }}</td>
+        <td>{{ mode }}</td>
+        <td>{{ fname }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<a href="/upload">Upload New Video</a>
+{% endblock %}

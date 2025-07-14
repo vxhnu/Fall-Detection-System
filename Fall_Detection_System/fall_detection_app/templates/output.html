@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Processed Video{% endblock %}
+{% block content %}
+<h1>Processed Video</h1>
+<p><a href="{{ url_for('download_file', filename=filename) }}">Download Annotated Video</a></p>
+<video width="640" controls>
+    <source src="{{ url_for('download_file', filename=filename) }}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<br>
+<a href="/upload">Process Another Video</a>
+{% endblock %}
